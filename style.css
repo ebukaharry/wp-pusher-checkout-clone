@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+/* ##########@ CSS RESET @##########*/ /* Box sizing rules */
+*,
+  *: : before, *: : after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: "Lato", sans-serif;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* #############@ MAIN STYLING BEGINS @##############*/
+
+/* COLOR VARIABLES */
+:root {
+  --white: #fff;
+  --bg-blue: #1179bf;
+  --bg-grey: #edeff2;
+  --bg-green: #038e7d;
+  --bg-white: #f5f8fa;
+  --text-blue: #1d2c3c;
+  --text-grey: #646e7a;
+  --light-blue: #548bc5;
+  --light-grey: #e0e6ea;
+  --link-blue: #3170bf;
+}
+/* COLOR VARIABLES END */
+
+body {
+  display: none;
+}
+
+/* DESKTOP VIEWPORT */
+
+@media screen and (min-width: 1024px) {
+  body {
+    color: var(--text-blue);
+    background: var(--bg-white);
+    margin: 35px;
+    display: block;
+  }
+
+  nav img {
+    width: 200px;
+    height: 39px;
+  }
+
+  form label {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  form input {
+    width: 227px;
+    height: 36px;
+    background: var(--bg-grey);
+    border: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    padding: 0 10px;
+    margin-top: 5px;
+  }
+
+  form input:focus {
+    border: 2px solid var(--text-grey);
+  }
+
+  form button {
+    min-width: 100%;
+    background: var(--bg-green);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.396px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-grey);
+    gap: 5px;
+  }
+
+  footer p {
+    margin: 0;
+  }
+
+  footer .terms {
+    text-decoration: none;
+    color: var(--link-blue);
+  }
+
+  #card {
+    display: flex;
+    border-radius: 6px;
+    background: var(--bg-white);
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.05),
+      0px 15px 35px 0px rgba(43, 64, 78, 0.1);
+    margin: 70px auto;
+    max-width: 65%;
+  }
+
+  #checkout-form {
+    padding: 30px;
+  }
+
+  #checkout-form .heading {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  #pricing {
+    background: var(--bg-blue);
+    color: var(--white);
+    padding: 30px 50px;
+    font-size: 16px;
+  }
+
+  #pricing h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  #pricing .need-clients {
+    padding-bottom: 10px;
+  }
+
+  #pricing .divider {
+    color: var(--light-grey);
+    opacity: 0.25;
+    margin: 25px 0;
+  }
+
+  #pricing .avatar {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+  }
+
+  #pricing .avatar img {
+    border-radius: 50%;
+  }
+
+  #pricing .avatar h4 {
+    margin: auto 0;
+  }
+
+  nav,
+  .nav-items,
+  .name-field {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul.nav-items {
+    list-style: none;
+    gap: 30px;
+    margin: auto;
+  }
+
+  ul.features {
+    margin: 30px 0;
+    padding-left: 0;
+  }
+
+  .features li {
+    background: url("./check.png") no-repeat 0px 8px transparent;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 30px;
+  }
+
+  .nav-items li {
+    padding-left: 20px;
+  }
+  .nav-items a {
+    text-decoration: none;
+  }
+
+  .nav-items li button {
+    background-color: var(--bg-white);
+    padding: 8px 20px;
+    margin: -8px;
+    border-radius: 6px;
+    border: 2px solid var(--text-grey);
+    cursor: pointer;
+  }
+
+  .divider {
+    height: 2px;
+    max-width: 100%;
+    background: var(--light-grey);
+    opacity: 0.6;
+    margin: 30px 0;
+  }
+
+  .form-heading h3 {
+    font-size: 18px;
+  }
+
+  .form-heading span {
+    border: 2px solid var(--light-blue);
+    border-radius: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 1px 7px;
+    text-align: center;
+    margin-right: 5px;
+    color: var(--light-blue);
+  }
+
+  .name-field {
+    gap: 25px;
+  }
+
+  .form-control {
+    margin-top: 15px;
+  }
+
+  input.credit-card {
+    width: 100%;
+  }
+
+  .need-help p {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stripe {
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .price {
+    margin: 10px 0;
+  }
+
+  .price h1 {
+    font-size: 60px;
+    font-weight: 300;
+    margin: 0;
+    position: relative;
+  }
+
+  .price h1::before {
+    content: "$";
+    font-size: 24px;
+    font-weight: 700;
+    bottom: 24px;
+    right: 2px;
+    position: relative;
+  }
+
+  .price h1::after {
+    content: "/ year";
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+  }
+}
